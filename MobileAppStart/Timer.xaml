@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileAppStart.Timer">
+    <ContentPage.Content>
+        <StackLayout>
+            <FlexLayout>
+                <Label x:Name="lbl"
+                       Text="Valjuta nupple ja siia"
+                       FontSize="Medium"
+                       BackgroundColor="Black">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <Button x:Name="timer_btn"
+                        Text="Naita ingo"
+                        FontSize="Large"
+                        Clicked="timer_btn_Clicked">
+                </Button>
+                
+            </FlexLayout>
+            <Button x:Name="tagasi"
+                        Text="tagasi"
+                        FontSize="Large"
+                        Clicked="back_Clicked">
+                </Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
