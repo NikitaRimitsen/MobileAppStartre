@@ -36,8 +36,13 @@ namespace MobileAppStart
             };
             vremja = new TimePicker { };
             vremja.PropertyChanged += Vremja_PropertyChanged;
-            string a = rnd.ToString();
-            nazvanie = new Label { Text = a };
+            //string a = rnd.ToString();
+            nazvanie = new Label {
+                TextColor = Color.Black,
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center,
+                FontSize = 30
+            };
             kartinka = new Image
             {
                 Source = "cat.jpg"

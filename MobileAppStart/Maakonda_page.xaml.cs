@@ -25,7 +25,9 @@ namespace MobileAppStart
             "Jõgeva maakond\n Maakonnalinn: Jõgeva", "Järva maakond\n Maakonnalinn: Paide", "Lääne maakond\n Maakonnalinn: Haapsalu", "Lääne-Viru maakond\n Maakonnalinn: Rakvere",
             "Põlva maakond\n Maakonnalinn: Põlva", "Pärnu maakond\n Maakonnalinn: Pärnu", "Rapla maakond\n Maakonnalinn: Rapla", "Saare maakond\n Maakonnalinn: Saaremaa",
             "Tartu maakond\n Maakonnalinn: Tartu", "Valga maakond\n Maakonnalinn: Valga", "Viljandi maakond\n Maakonnalinn: Viljandi", "Võru maakond\n Maakonnalinn: Võru" };
-
+        string[] votetonado = new string[15] { "Harju maakond", "Hiiu maakond", "Ida-Viru maakond", "Jõgeva maakond", "Järva maakond", "Lääne maakond", "Lääne-Viru maakond", "Põlva maakond", "Pärnu maakond", "Rapla maakond", "Saare maakond", "Tartu maakond", "Valga maakond", "Viljandi maakond", "Võru maakond" };
+        int j;
+        int a = 1;
         public Maakonda_page()
         {
 
@@ -106,7 +108,9 @@ namespace MobileAppStart
             entry.Completed += Entry_Completed;
             opisanie = new Label
             {
-                Text = "Maakond"
+                Text = "Maakond",
+                TextColor = Color.Black,
+                FontSize = 20
             };
             TapGestureRecognizer tap = new TapGestureRecognizer();
             tap.Tapped += Tap_Tapped;
@@ -124,14 +128,69 @@ namespace MobileAppStart
 
             
         }
+        public async void Test()
+        {
+            
+        }
 
         private async void Entry_Completed(object sender, EventArgs e)
         {
             okmaa = entry.Text;
-            
+            a = 1;
+            int c = 0;          
+            for (int i = 0; i < votetonado.Length; i++)
+            {
+                for ( j = 0; j < votetonado.Length; j++)
+                {
+                    if (okmaa == votetonado[j])
+                    {
+                        /*bool answer = await DisplayAlert("Küsimus", "Kas soovite rohkem teavet?", "Jah", "Ei");
+                        if (answer == true)
+                        {
+                            kartinki.Source = pilti[j];
+                            opisanie.Text = texti[j];
+                            kartinki.IsVisible = true;
 
-            
-            if (okmaa == "Harju maakond" || okmaa == "harju maakond")
+                        }*/
+
+                        kartinki.Source = pilti[j];
+                        opisanie.Text = texti[j];
+                        kartinki.IsVisible = true;
+
+                        /*if (a == 1)
+                        {
+                            Test();
+                            a++;
+                        }
+                        else
+                        {
+
+                        }  */
+                        //break;
+                    }
+                }
+            }
+            if(okmaa == "")
+            {
+                DisplayAlert("Tähelepanu", "Sellist maakonda pole, kontrollige, kas olete Maakonna õigesti kirjutanud", "Hästi");
+            }
+            /*int a = int.Parse(Console.ReadLine());
+            int[] slova = { 1, 2, 3 };
+            bool check = false;
+            for (int i = 1; i <= slova.Length; i++)
+            {
+                if (i == okmaa)
+                {
+                    check = true;
+                    break;
+                }
+            }
+            if (check)
+                Console.WriteLine("правильно");
+            else
+                Console.WriteLine("не правильно");
+            */
+            /*if (okmaa == "Harju maakond" || okmaa == "harju maakond")
             {
                 bool answer = await DisplayAlert("Küsimus", "Kas soovite rohkem teavet?", "Jah", "Ei");  
                 if (answer ==  true)
@@ -280,11 +339,8 @@ namespace MobileAppStart
                     opisanie.Text = texti[14];
                     kartinki.IsVisible = true;
                 }
-            }
-            else
-            {
-                DisplayAlert("Tähelepanu", "Sellist maakonda pole, kontrollige, kas olete Maakonna õigesti kirjutanud", "Hästi");
-            }
+            }*/
+
         }
 
         private void Tap_Tapped(object sender, EventArgs e)

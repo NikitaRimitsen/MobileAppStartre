@@ -46,7 +46,9 @@ namespace MobileAppStart
             vvod.Completed += Vvod_Completed;
             opisanie = new Label
             {
-                Text = "Гороскоп. Выберите дату или напишите названия знака зодиака"
+                Text = "Гороскоп. Выберите дату или напишите названия знака зодиака",
+                TextColor = Color.Black,
+                FontSize = 16
             };
             pokazatel = new Frame()
             {
